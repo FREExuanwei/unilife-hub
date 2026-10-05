@@ -1,0 +1,16 @@
+.dashboard-exams .card-value { overflow-wrap:anywhere; line-height:1.5; font-size:17px; }
+.exam-home-countdown { display:inline-block; margin-top:4px; border-radius:7px; padding:4px 7px; font-size:12px; color:var(--purple); background:var(--purple-soft); }
+.exam-home-urgent { border-color:color-mix(in srgb,var(--orange) 45%,var(--border)); }
+.exam-home-urgent .exam-home-countdown { color:var(--orange); background:var(--orange-soft); }
+.exam-home-countdown.exam-urgency-today { color:var(--danger); background:var(--danger-soft); }
+.related-course-exam { margin:18px 0; padding:16px; border:1px solid color-mix(in srgb,var(--purple) 25%,var(--border)); border-radius:14px; background:linear-gradient(130deg,var(--surface),var(--purple-soft)); }
+.related-course-exam h4 { display:flex; align-items:center; gap:7px; color:var(--purple); font-size:13px; }
+.related-course-exam h4 span { margin-left:auto; font-weight:400; font-size:12px; }
+.related-course-exam a { display:flex; align-items:center; gap:12px; margin-top:12px; min-height:44px; }
+.related-course-exam a > div { flex:1; min-width:0; }.related-course-exam a > svg { flex-shrink:0; color:var(--purple); }
+.related-course-exam strong { font-size:13px; overflow-wrap:anywhere; display:block; }.related-course-exam small { display:block; color:var(--muted); margin-top:6px; font-size:12px; line-height:1.7; }
+.related-course-exam p { color:var(--muted); font-size:13px; margin-top:12px; }
+.semester-exam-protection { padding:14px; margin-bottom:16px; background:var(--purple-soft); border-radius:12px; border:1px solid color-mix(in srgb,var(--purple) 25%,var(--border)); text-align:left; }
+.semester-exam-protection label { display:block; font-size:13px; font-weight:600; }
+.semester-exam-protection select { display:block; min-height:46px; width:100%; min-width:0; margin:8px 0 10px; padding:10px; border-radius:9px; font:inherit; color:var(--text); background:var(--surface); border:1px solid var(--border); }
+@media(max-width:767px) { .dashboard-exams .card-value { font-size:14px; }.exam-home-countdown { font-size:11px; }.semester-exam-protection select { font-size:16px; } }

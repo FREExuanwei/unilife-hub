@@ -1,0 +1,5 @@
+import { Pause, Play, RotateCcw, Square } from 'lucide-react'
+import type { PomodoroState } from '../pomodoroTypes'
+export default function PomodoroControls({state,busy,onStart,onPause,onResume,onFinish}:{state:PomodoroState;busy:boolean;onStart:()=>void;onPause:()=>void;onResume:()=>void;onFinish:(reset:boolean)=>void}){
+  return <div className="pomodoro-controls">{state.status==='idle'?<button className="primary-button" type="button" disabled={busy} onClick={onStart}><Play size={18} aria-hidden="true" />{state.mode==='focus'?'开始专注':'开始休息'}</button>:<><button className="primary-button" type="button" disabled={busy} onClick={state.status==='running'?onPause:onResume}>{state.status==='running'?<Pause size={18} aria-hidden="true" />:<Play size={18} aria-hidden="true" />}{state.status==='running'?'暂停':'继续'}</button><button className="secondary-button" type="button" disabled={busy} onClick={()=>onFinish(false)}><Square size={16} aria-hidden="true" />结束</button></>}<button className="secondary-button" type="button" disabled={busy||state.status==='idle'} onClick={()=>onFinish(true)}><RotateCcw size={16} aria-hidden="true" />重置</button></div>
+}

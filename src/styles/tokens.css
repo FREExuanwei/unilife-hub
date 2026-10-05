@@ -1,0 +1,78 @@
+:root {
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color-scheme: light;
+  --bg: #f5f6fd;
+  --surface: #ffffff;
+  --surface-soft: #eef1fc;
+  --text: #242a45;
+  --muted: #59637e;
+  --border: #e1e6f3;
+  --accent: #4e52c7;
+  --accent-soft: #ecebff;
+  --brand-gradient: linear-gradient(120deg, #4c61db, #7947ce);
+  --hero: #5962dc;
+  --hero-gradient: radial-gradient(ellipse at 95% 10%, #60c5fa66, transparent 48%), linear-gradient(115deg, #425bd3 0%, #6852d8 58%, #9443bd 100%);
+  --hero-text: #ffffff;
+  --hero-muted: #eeeaff;
+  --hero-art: #ffffff20;
+  --shadow: 0 5px 22px #3c4f9010;
+  --shadow-hover: 0 12px 28px #5359d622;
+  --blue: #3862d5;
+  --blue-soft: #eaf0ff;
+  --orange: #ae4b23;
+  --orange-soft: #fff0e7;
+  --purple: #8244c3;
+  --purple-soft: #f2eaff;
+  --cyan: #147b91;
+  --cyan-soft: #e2f7fc;
+  --pink: #b43685;
+  --pink-soft: #fceafa;
+  --neutral: #606b83;
+  --neutral-soft: #edf0f7;
+  --danger: #c13352;
+  --danger-soft: #ffedf1;
+  --sidebar-width: 242px;
+  --tone: var(--accent);
+  --tone-soft: var(--accent-soft);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --surface: #151c30;
+  --surface-soft: #1b2440;
+  --text: #edf1ff;
+  --muted: #aab6d3;
+  --border: #2b3653;
+  --accent: #a8afff;
+  --accent-soft: #282b53;
+  --brand-gradient: linear-gradient(120deg, #455ccd, #7947cd);
+  --hero: #363c86;
+  --hero-gradient: radial-gradient(ellipse at 95% 10%, #2879c755, transparent 48%), linear-gradient(115deg, #233e87 0%, #463487 58%, #672e78 100%);
+  --hero-text: #ffffff;
+  --hero-muted: #e0e5ff;
+  --hero-art: #a1adff20;
+  --shadow: 0 5px 24px #00000020;
+  --shadow-hover: 0 10px 32px #5e58d828;
+  --blue: #9cbaff;
+  --blue-soft: #23365b;
+  --orange: #ffb391;
+  --orange-soft: #422e2d;
+  --purple: #d1a6ff;
+  --purple-soft: #342751;
+  --cyan: #88dcec;
+  --cyan-soft: #193947;
+  --pink: #f2a2d7;
+  --pink-soft: #422441;
+  --neutral: #bac5de;
+  --neutral-soft: #293349;
+  --danger: #ff9bad;
+  --danger-soft: #402638;
+}
+
+.tone-blue { --tone: var(--blue); --tone-soft: var(--blue-soft); }
+.tone-orange { --tone: var(--orange); --tone-soft: var(--orange-soft); }
+.tone-purple { --tone: var(--purple); --tone-soft: var(--purple-soft); }
+.tone-cyan { --tone: var(--cyan); --tone-soft: var(--cyan-soft); }
+.tone-pink { --tone: var(--pink); --tone-soft: var(--pink-soft); }
+.tone-neutral { --tone: var(--neutral); --tone-soft: var(--neutral-soft); }

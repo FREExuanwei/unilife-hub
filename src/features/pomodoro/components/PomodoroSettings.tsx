@@ -1,0 +1,9 @@
+import { useId, useState } from 'react'
+import type { FormEvent } from 'react'
+import Modal from '../../../components/Modal'
+import type { PomodoroSettings as Settings } from '../pomodoroTypes'
+export default function PomodoroSettings({settings,onSave,onClose}:{settings:Settings;onSave:(settings:Settings)=>Promise<string|null>;onClose:()=>void}){
+  const id=useId(),[focus,setFocus]=useState(settings.focusMinutes),[rest,setRest]=useState(settings.breakMinutes),[error,setError]=useState<string|null>(null),[busy,setBusy]=useState(false)
+  async function submit(event:FormEvent){event.preventDefault();setBusy(true);const result=await onSave({focusMinutes:focus,breakMinutes:rest});setBusy(false);setError(result);if(!result)onClose()}
+  return <Modal title="专注计时设置" compact onClose={onClose}><form className="bookmark-form study-form" onSubmit={submit} noValidate><div className="form-field"><label htmlFor={`${id}-focus`}>专注时间（分钟）</label><input id={`${id}-focus`} type="number" min={1} max={180} step={1} value={Number.isNaN(focus)?'':focus} onChange={e=>setFocus(e.target.value===''?NaN:Number(e.target.value))} /></div><div className="pomodoro-presets" aria-label="常用专注时间">{[25,30,45,50,60].map(value=><button key={value} type="button" aria-pressed={focus===value} onClick={()=>setFocus(value)}>{value} 分钟</button>)}</div><div className="form-field"><label htmlFor={`${id}-break`}>短休息时间（分钟）</label><input id={`${id}-break`} type="number" min={1} max={60} step={1} value={Number.isNaN(rest)?'':rest} onChange={e=>setRest(e.target.value===''?NaN:Number(e.target.value))} /></div><p className="field-hint">专注 1～180 分钟 · 休息 1～60 分钟。设置会保存在当前浏览器中。</p>{error&&<p className="form-save-error" role="alert">{error}</p>}<footer className="form-actions"><button type="button" className="secondary-button" disabled={busy} onClick={onClose}>取消</button><button className="primary-button" type="submit" disabled={busy}>{busy?'保存中…':'保存设置'}</button></footer></form></Modal>
+}

@@ -1,0 +1,62 @@
+# Dependencies, build output and local caches
+node_modules/
+dist/
+.npm-cache/
+.vite/
+.cache/
+coverage/
+*.tsbuildinfo
+
+# Local credentials and deployment state
+.env
+.env.*
+.npmrc
+.netrc
+.netlify/
+.credentials/
+credentials.json
+credentials.*.json
+secrets.json
+secret.*
+secrets.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+
+# Local verification, deployment evidence and debugging output
+.verification/
+test-results/
+playwright-report/
+release-*.json
+release-*.log
+*.log
+docs/verification.md
+docs/*-verification.md
+
+# Personal exports and backups stay on this device
+backups/
+data-exports/
+user-data/
+unilife-hub-backup-*.json
+*backup*.json
+*Backup*.json
+*localStorage*.json
+*localstorage*.json
+*indexedDB*.json
+*indexeddb*.json
+
+# Editor, operating-system and temporary files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.local
+*.tmp
+*.temp
+*.swp
+*.swo
+*~

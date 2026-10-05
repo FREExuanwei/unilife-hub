@@ -1,0 +1,55 @@
+/* Phase 3: stronger color depth, while retaining the existing layout. */
+:root {
+  --bg: #f0f1fc;
+  --surface-soft: #e9edfc;
+  --border: #d8dff1;
+  --blue-soft: #e4ecff;
+  --cyan: #116c80;
+  --orange-soft: #ffebdf;
+  --purple-soft: #eee1ff;
+  --cyan-soft: #dbf5fc;
+  --pink-soft: #fce2f4;
+  --shadow: 0 7px 25px #3b459a12, 0 1px 3px #3b459a08;
+  --shadow-hover: 0 13px 32px #5654bb28;
+}
+:root[data-theme="dark"] {
+  --bg: #0b1020;
+  --surface: #171e34;
+  --surface-soft: #202b49;
+  --border: #354163;
+  --blue-soft: #253960;
+  --cyan: #88dcec;
+  --orange-soft: #48312e;
+  --purple-soft: #3a2c59;
+  --cyan-soft: #1a3e4d;
+  --pink-soft: #492846;
+  --shadow: 0 7px 27px #02040c38, inset 0 1px 0 #adbaff08;
+  --shadow-hover: 0 13px 34px #5d58d530;
+}
+body { background: radial-gradient(ellipse at 98% 3%, color-mix(in srgb, var(--purple-soft) 85%, transparent), transparent 46%), radial-gradient(ellipse at 10% 60%, color-mix(in srgb, var(--cyan-soft) 65%, transparent), transparent 52%), var(--bg); background-attachment: fixed; }
+.sidebar { background: radial-gradient(ellipse at 0% 100%, color-mix(in srgb, var(--purple-soft) 60%, transparent), transparent 50%), linear-gradient(170deg, var(--surface), color-mix(in srgb, var(--blue-soft) 22%, var(--surface))); }
+.sidebar-link:not(.active):hover { color: var(--tone); background: var(--tone-soft); }
+.sidebar-link.active { box-shadow: 0 6px 19px #6653dc38, inset 0 1px 0 #ffffff20; }
+.header { background: color-mix(in srgb, var(--surface) 63%, transparent); }
+.theme-toggle { border-color: color-mix(in srgb, var(--accent) 25%, var(--border)); color: var(--accent); }
+.welcome-card { box-shadow: 0 14px 38px #604ecd24, inset 0 1px 0 #ffffff25; }
+.dashboard-card { background: linear-gradient(145deg, color-mix(in srgb, var(--tone-soft) 78%, var(--surface)), color-mix(in srgb, var(--surface) 91%, var(--tone-soft))); border-color: color-mix(in srgb, var(--tone) 25%, var(--border)); position: relative; }
+.card-icon, .quick-icon { background: linear-gradient(145deg, var(--tone-soft), color-mix(in srgb, var(--tone) 16%, var(--surface))); border: 1px solid color-mix(in srgb, var(--tone) 16%, transparent); box-shadow: 0 4px 12px color-mix(in srgb, var(--tone) 10%, transparent); }
+.card-top h3 { color: var(--tone); font-size: 12px; font-weight: 600; }
+.card-description { font-size: 11px; }
+.quick-action { background: linear-gradient(150deg, var(--surface) 15%, color-mix(in srgb, var(--tone-soft) 70%, var(--surface))); border-color: color-mix(in srgb, var(--tone) 22%, var(--border)); box-shadow: var(--shadow); }
+.quick-text small { font-size: 11px; }
+.gentle-note { background: linear-gradient(110deg, var(--purple-soft), color-mix(in srgb, var(--cyan-soft) 60%, var(--surface))); border-color: color-mix(in srgb, var(--purple) 20%, var(--border)); }
+.bookmark-card { background: linear-gradient(145deg, color-mix(in srgb, var(--tone-soft) 76%, var(--surface)), var(--surface) 83%); }
+.primary-button { box-shadow: 0 6px 18px #6354d838, inset 0 1px 0 #ffffff25; }
+.bookmark-dialog { background: linear-gradient(155deg, color-mix(in srgb, var(--purple-soft) 15%, var(--surface)), var(--surface) 40%); border-color: color-mix(in srgb, var(--accent) 25%, var(--border)); }
+.bookmark-modal-header > div { min-width: 0; }
+.bookmark-modal-header h2 { overflow-wrap: anywhere; }
+.form-field input:focus-visible, .form-field select:focus-visible, .form-field textarea:focus-visible { outline-offset: 2px; }
+.form-field input, .form-field select, .form-field textarea { scroll-margin-block: 18px; }
+:root[data-theme="dark"] .welcome-card { box-shadow: 0 14px 40px #4034882e, inset 0 1px 0 #bdd5ff16; }
+@media (max-width: 767px) {
+  .header { background: linear-gradient(130deg, var(--surface), color-mix(in srgb, var(--purple-soft) 32%, var(--surface))); }
+  .mobile-navigation { background: color-mix(in srgb, var(--surface) 94%, var(--purple-soft)); box-shadow: 0 -5px 24px #4a439215; }
+  .form-field input, .form-field select, .form-field textarea { font-size: 16px; }
+}
