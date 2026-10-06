@@ -1,8 +1,67 @@
 # UniLife Hub
 
-一个轻量、可扩展的个人大学生活助手。当前版本 0.7.0：保留首页、网站收藏、多学期周次课程表、任务、考试、学习记录与统计，支持完整备份恢复、PWA 离线访问和番茄钟提醒。
+一个本地优先的大学生活与学习管理 PWA，将课程、任务、考试、收藏和专注记录放在同一个工作台。支持浅色与深色主题、桌面与手机布局，以及 JSON 备份迁移。
 
-基于 React、Vite、TypeScript 和 Lucide React，支持 PWA。数据优先保存在当前设备浏览器中，没有登录、数据库或云同步。项目包含通用 Netlify 部署配置；仓库仅保存源码、必要配置和静态资源。
+A local-first student productivity PWA for schedules, tasks, exams, bookmarks, and focused study.
+
+当前版本：**0.7.0**。
+
+## 技术栈
+
+| 用途 | 技术 |
+| --- | --- |
+| 界面与类型 | React 19、TypeScript 5.9 |
+| 开发与构建 | Vite 7 |
+| 路由与图标 | React Router 7、Lucide React |
+| 本地数据与离线 | localStorage、原生 Service Worker、Web App Manifest |
+
+## 核心功能速览
+
+| 功能 | 能力 |
+| --- | --- |
+| 课程表 | 多学期、按周安排、单/双周与自定义周次、时间冲突提示、今日课程 |
+| 作业与考试 | 作业和普通待办、优先级与截止筛选、课程关联、考试倒计时 |
+| 学习与专注 | 手动学习记录、趋势与课程统计、可恢复的番茄钟、完成提醒 |
+| 网站收藏 | 分类、搜索、置顶、自定义图标 |
+| 数据管理 | JSON 备份导出、校验与预览后恢复、跨设备或访问来源迁移 |
+| PWA 与界面 | 首次在线完成资源准备后可离线使用，支持安装、浅深主题与响应式布局 |
+
+## 浏览器本地数据与隐私
+
+课程、任务、考试、收藏、学习记录与偏好保存在当前设备、当前访问来源的浏览器 localStorage 中。应用没有登录、远程数据库或云同步；不同设备、浏览器，以及不同协议、域名或端口的数据各自独立。
+
+可在“设置 → 数据管理”导出 JSON 备份，再在目标设备或访问来源导入恢复。建议定期备份并自行保管；清除站点数据或使用隐私模式会影响本地数据保存。
+
+收藏图标可能向收藏网站或自定义图片地址发起请求；外部收藏网站与图标不在离线缓存范围内。
+
+## Screenshots
+
+以下截图中的所有课程、任务、考试与学习记录均为虚构演示数据，不来自用户浏览器。
+
+**桌面首页 · 浅色主题**
+
+<img src="docs/screenshots/dashboard-light.png" alt="浅色桌面首页：今日课程、任务、考试与本周学习概览" width="960">
+
+<details>
+<summary>桌面课程表 · 浅色主题</summary>
+
+<img src="docs/screenshots/schedule.png" alt="浅色桌面课程表：学期周次与一周课程安排" width="960">
+
+</details>
+
+<details>
+<summary>学习统计与番茄钟 · 深色主题</summary>
+
+<img src="docs/screenshots/statistics-dark.png" alt="深色桌面学习统计：学习时长、趋势图与番茄钟" width="960">
+
+</details>
+
+<details>
+<summary>手机任务页 · 浅色主题</summary>
+
+<img src="docs/screenshots/tasks-mobile.png" alt="浅色手机任务页：任务筛选、截止与优先级" width="360">
+
+</details>
 
 ## 开始使用
 
