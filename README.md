@@ -2,9 +2,37 @@
 
 一个本地优先的大学生活与学习管理 PWA，将课程、任务、考试、收藏和专注记录放在同一个工作台。支持浅色与深色主题、桌面与手机布局，以及 JSON 备份迁移。
 
-A local-first student productivity PWA for schedules, tasks, exams, bookmarks, and focused study.
+A local-first student productivity PWA for planning semesters, tracking deadlines and recording focused study. No account or cloud sync.
 
-当前版本：**0.7.0**。
+`React 19` · `TypeScript 5.9` · `Vite 7` · `PWA` · `Local-first`
+
+版本 **0.7.0** · [Quick Start](#quick-start) · [功能说明](#核心功能速览) · [隐私设计](#浏览器本地数据与隐私) · [更多截图](#更多截图)
+
+<img src="docs/screenshots/dashboard-dark.png" alt="UniLife Hub Dashboard in dark mode：今日课程、任务、考试与本周学习概览" width="960">
+
+所有截图均使用虚构演示数据，不来自用户浏览器。Screenshots contain fictional demo data, not real user records. 当前应用界面为中文。
+
+## 核心亮点 / Highlights
+
+- **课程与截止 / Plan your semester** — Weekly timetables, assignments, priorities and exam countdowns across semesters.
+- **学习与专注 / Focus and review** — A resumable Pomodoro timer, study records and time-based statistics.
+- **常用资源 / Keep resources close** — Searchable website bookmarks with categories and pinned entries.
+- **本地与离线 / Keep data local** — Browser-local data, offline use after initial setup, and JSON backup for manual migration.
+
+## Quick Start
+
+需要 Node.js 20.19+（20 系列）或 22.12+。Requires Node.js 20.19+ (20.x) or 22.12+.
+
+```sh
+git clone https://github.com/FREExuanwei/unilife-hub.git
+cd unilife-hub
+npm install
+npm run dev
+```
+
+生产构建：`npm run build`；本地预览：`npm run preview`。Windows PowerShell 的 `npm.cmd` 用法与完整命令见[开始使用](#开始使用)。
+
+开发服务器不注册 Service Worker；PWA 离线使用的准备条件见 [PWA 与离线使用](#pwa-与离线使用)。
 
 ## 技术栈
 
@@ -34,18 +62,14 @@ A local-first student productivity PWA for schedules, tasks, exams, bookmarks, a
 
 收藏图标可能向收藏网站或自定义图片地址发起请求；外部收藏网站与图标不在离线缓存范围内。
 
-## Screenshots
+## 更多截图
 
-以下截图中的所有课程、任务、考试与学习记录均为虚构演示数据，不来自用户浏览器。
-
-**桌面首页 · 浅色主题**
-
-<img src="docs/screenshots/dashboard-light.png" alt="浅色桌面首页：今日课程、任务、考试与本周学习概览" width="960">
+展开查看课程安排、深色专注界面与手机布局。以下课程、任务、考试与学习记录同样均为虚构演示数据。
 
 <details>
-<summary>桌面课程表 · 浅色主题</summary>
+<summary>桌面课程表 · 深色主题</summary>
 
-<img src="docs/screenshots/schedule.png" alt="浅色桌面课程表：学期周次与一周课程安排" width="960">
+<img src="docs/screenshots/schedule-dark.png" alt="深色桌面课程表：学期周次与彩色课程安排" width="960">
 
 </details>
 
@@ -53,6 +77,20 @@ A local-first student productivity PWA for schedules, tasks, exams, bookmarks, a
 <summary>学习统计与番茄钟 · 深色主题</summary>
 
 <img src="docs/screenshots/statistics-dark.png" alt="深色桌面学习统计：学习时长、趋势图与番茄钟" width="960">
+
+</details>
+
+<details>
+<summary>桌面首页 · 浅色主题</summary>
+
+<img src="docs/screenshots/dashboard-light.png" alt="浅色桌面首页：今日课程、任务、考试与本周学习概览" width="960">
+
+</details>
+
+<details>
+<summary>桌面课程表 · 浅色主题</summary>
+
+<img src="docs/screenshots/schedule.png" alt="浅色桌面课程表：学期周次与一周课程安排" width="960">
 
 </details>
 
@@ -73,7 +111,7 @@ npm install
 npm run dev
 ```
 
-如果已经在项目目录中，无需执行 `cd`。开发服务器默认地址为 http://localhost:5173，端口被占用时以终端实际输出为准。
+如果已经在项目目录中，无需执行 `cd`。开发服务器默认地址为 <http://localhost:5173>，端口被占用时以终端实际输出为准。
 
 Windows PowerShell 如果阻止执行 `npm.ps1`，可以使用 `npm.cmd install` 和 `npm.cmd run dev`，无需修改系统执行策略。
 
@@ -265,3 +303,7 @@ localStorage 按协议、域名和端口隔离。继续使用原来的访问地�
 ## 依赖
 
 运行时仅 React、React DOM、React Router、Lucide React。开发依赖仅 Vite、React 插件、TypeScript 和类型定义；没有 UI 框架、状态库、图表库或远程字体依赖。
+
+## 许可状态 / License status
+
+本仓库目前没有 LICENSE 文件，尚未声明开源许可证。This repository does not currently specify an open-source license.
